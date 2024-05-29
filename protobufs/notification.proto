@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+service UserNotificationService {
+    rpc SendWeatherAlert (WeatherAlert) returns (WeatherAlertConfirmation) {}
+}
+
+message WeatherAlert {
+    string location = 1;
+    float temperature = 2;
+    float humidity = 3;
+    float wind_speed = 4;
+}
+
+message WeatherAlertConfirmation {
+    bool success = 1;
+    string message = 2;
+}
