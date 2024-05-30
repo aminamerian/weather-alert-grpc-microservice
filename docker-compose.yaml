@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+
+    weather:
+        build:
+            context: .
+            dockerfile: weather/Dockerfile
+        environment:
+            NOTIFICATION_HOST: notification
+        image: weather
+        networks:
+            - microservices
+        ports:
+            - 8000:8000
+
+    notification:
+        build:
+            context: .
+            dockerfile: notification/Dockerfile
+        image: notification
+        networks:
+            - microservices
+
+networks:
+    microservices:
