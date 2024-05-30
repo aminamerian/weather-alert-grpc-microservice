@@ -6,8 +6,7 @@ This project consists of two microservices, `weather` and `notification`, which 
 
 - [Features](#features)
 - [Requirements](#requirements)
-- [Setup](#setup)
-- [Usage](#usage)
+- [Run the services using Docker](#run-the-services-using-docker)
 
 ## Features
 
@@ -19,8 +18,10 @@ This project consists of two microservices, `weather` and `notification`, which 
 
 - Python 3.x
 - gRPC Python library
+- Docker
+- Docker Compose
 
-## Setup
+## Run the services using Docker
 
 1. Clone this repository to your local machine:
 
@@ -28,42 +29,8 @@ This project consists of two microservices, `weather` and `notification`, which 
     git clone git@github.com:aminamerian/weather-alert-grpc-microservice.git
     ```
 
-2. Install the required dependencies for weather service:
+2. To run the microservices using Docker, run the following command:
 
     ```bash
-    cd weather
-    python -m venv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
-    ```
-3. Install the required dependencies for notification service:
-
-    ```bash
-    cd notification
-    python -m venv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
-    ```
-
-## Usage
-
-1. Start the `notification` microservice:
-
-    ```bash
-    cd notification
-    source venv/bin/activate
-    python notification.py
-    ```
-    The output should be similar to the following:
-
-    ```bash
-    User Notification Service started on port 50052
-    ```
-
-2. Start the `weather` microservice:
-
-    ```bash
-    cd weather
-    source venv/bin/activate
-    python weather.py
+    docker compose up
     ```
